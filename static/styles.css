@@ -1,0 +1,99 @@
+body {
+  padding-top: 56px;
+  background-color: #2b2b2b;
+  color: #d4d4d4;
+  font-family: "Verdana", sans-serif;
+}
+
+.nav-item {
+  margin-right: 10px;
+}
+
+.nav-item:last-child {
+  margin-right: 0;
+}
+
+.nav-link {
+  color: #f0e68c;
+}
+
+.nav-link:hover {
+  color: #ffd700;
+}
+
+.navbar-nav.ml-auto .nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link.btn-link {
+  padding: 0.5rem 1rem;
+}
+
+.navbar-dark .navbar-brand,
+.navbar-dark .navbar-nav .nav-link {
+  color: #f0e68c;
+}
+
+.navbar-dark .navbar-brand:hover,
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #ffd700;
+}
+
+.wiki-header {
+  background-color: #3a3a3a;
+  color: #f0e68c;
+}
+
+.wiki-content {
+  margin-top: 20px;
+  background-color: #383838;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #3a3a3a;
+  color: #f0e68c;
+  text-align: center;
+}
+
+.jumbotron {
+  background-color: #4b4b4b;
+  color: #d4d4d4;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn-primary {
+  background-color: #f0e68c;
+  border-color: #f0e68c;
+  color: #2b2b2b;
+}
+
+.btn-primary:hover {
+  background-color: #ffd700;
+  border-color: #ffd700;
+  color: #2b2b2b;
+}
+
+a {
+  color: #f0e68c;
+}
+
+a:hover {
+  color: #ffd700;
+}
+
+.btn btn-link nav-link {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+}

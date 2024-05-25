@@ -62,12 +62,13 @@ def location_detail(request, pk):
 def add_game(request):
     if request.method == 'POST':
         form = GameAddForm(request.POST)
-        if form.is_valid():
+        if form.is_valid():   
             form.save()
             return redirect('home')
     else:
         form = GameAddForm()
     return render(request, 'add_game.html', {'game_form': form})
+
 #remove game from list
 @login_required
 def remove_game(request):
