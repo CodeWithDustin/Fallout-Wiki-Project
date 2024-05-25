@@ -1,0 +1,55 @@
+{% extends 'base.html' %} {% block title %}Search Results - Fallout
+Wiki{%endblock%} {% load static %} {% block extra_head %}
+<link rel="stylesheet" href="{% static 'search_styles.css' %}" />
+{% endblock extra_head %} {% block content %}
+<div class="container search-results-container">
+  <h2>Search Results</h2>
+
+  {% if articles or characters or locations %}
+  <div class="search-results">
+    {% if articles %}
+    <div class="search-category">
+      <h3>Articles</h3>
+      <ul class="list-group">
+        {% for article in articles %}
+        <li class="list-group-item">
+          <a href="{% url 'article_detail' article.id %}"
+            >{{ article.title }}</a
+          >
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %} {% if characters %}
+    <div class="search-category">
+      <h3>Characters</h3>
+      <ul class="list-group">
+        {% for character in characters %}
+        <li class="list-group-item">
+          <a href="{% url 'character_detail' character.id %}"
+            >{{ character.name }}</a
+          >
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %} {% if locations %}
+    <div class="search-category">
+      <h3>Locations</h3>
+      <ul class="list-group">
+        {% for location in locations %}
+        <li class="list-group-item">
+          <a href="{% url 'location_detail' location.id %}"
+            >{{ location.name }}</a
+          >
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </div>
+  {% else %}
+  <p>No results found.</p>
+  {% endif %}
+</div>
+{% endblock %}

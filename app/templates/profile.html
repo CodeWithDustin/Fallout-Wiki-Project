@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <link href="{% static 'profile.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="profile-container">
+      <h1>User Profile</h1>
+      <div class="profile-info">
+        <p>Welcome, {{ user.username }}!</p>
+        <p>Email: {{ user.email }}</p>
+      </div>
+      <div class="profile-buttons">
+        <a href="{% url 'home' %}" class="btn btn-primary">Back to Main Menu</a>
+        <form action="{% url 'logout' %}" method="post" style="display: inline">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

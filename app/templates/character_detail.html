@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ character.name }}</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    {% load static %}
+    <link href="{% static 'styles.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container wiki-content">
+      <h2>{{ character.name }}</h2>
+      <p>{{ character.description }}</p>
+      <p><strong>Author:</strong> {{ character.author }}</p>
+      <p><strong>Game:</strong> {{ character.game }}</p>
+      <a href="{% url 'characters_list' %}" class="btn btn-secondary mt-3"
+        >Back</a
+      >
+      {% if request.user == character.author %}
+      <a
+        href="{% url 'character_update' character.pk %}"
+        class="btn btn-warning mt-3"
+        >Edit</a
+      >
+      {% endif %} {% if request.user.is_staff %}
+      <form
+        method="post"
+        action="{% url 'character_delete' character.pk %}"
+        class="d-inline"
+      >
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger mt-3">Delete</button>
+      </form>
+      {% endif %}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="{% static 'register.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Register</h2>
+      <form method="post">
+        {% csrf_token %} {% for field in form %}
+        <div class="form-group">
+          {{ field.label_tag }} {{ field }} {% if field.errors %}
+          <div class="errorlist">{{ field.errors|join:", " }}</div>
+          {% endif %}
+        </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+      <a href="{% url 'home' %}" class="btn btn-secondary mt-3">Back to Home</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+.article-list-container {
+  margin-top: 20px;
+}
+
+.list-group-item {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.article-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.article-content {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.article-game {
+  font-style: italic;
+  color: #666;
+}
+
+.location-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.location-description {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.location-game {
+  font-style: italic;
+  color: #666;
+}
+
+.character-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.character-description {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.character-game {
+  font-style: italic;
+  color: #666;
+}

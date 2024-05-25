@@ -1,0 +1,27 @@
+<!-- home.html -->
+
+{% extends 'base.html' %} {% block content %}
+<div class="jumbotron">
+  <h1 class="display-4">Welcome to Fallout Wiki</h1>
+  <p class="lead">Explore the vast world of Fallout!</p>
+  <hr class="my-4" />
+  <p>Select a category to start exploring:</p>
+  <div class="row">
+    <div class="col-md-3 mb-3">
+      <a href="{% url 'articles_list' %}" class="btn btn-primary btn-block"
+        >Articles</a
+      >
+    </div>
+    <div class="col-md-3 mb-3">
+      <a href="{% url 'characters_list' %}" class="btn btn-primary btn-block"
+        >Characters</a
+      >
+    </div>
+    <div class="col-md-3 mb-3">
+      <a href="{% url 'locations_list' %}" class="btn btn-primary btn-block"
+        >Locations</a
+      >
+    </div>
+  </div>
+</div>
+{% endblock %}

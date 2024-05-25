@@ -1,0 +1,25 @@
+.search-results-container {
+  margin-top: 20px;
+}
+
+.search-category {
+  margin-bottom: 20px;
+}
+
+.list-group-item {
+  padding: 10px;
+}
+
+.list-group-item a {
+  color: #333;
+  text-decoration: none;
+}
+
+.list-group-item a:hover {
+  color: #007bff;
+}
+
+.no-results {
+  margin-top: 20px;
+  color: #555;
+}

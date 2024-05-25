@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block title %}Locations - Fallout Wiki{%endblock%}
+{% block content %} {% load static %} <link rel="stylesheet" href="{% static
+"list_styles.css" %}">
+<div class="container location-list-container">
+  <h2>Locations</h2>
+  <div class="list-group">
+    {% for location in locations %}
+    <a
+      href="{% url 'location_detail' location.id %}"
+      class="list-group-item list-group-item-action"
+    >
+      <h4 class="location-name">{{ location.name }}</h4>
+      <p class="location-description">
+        {{ location.description|truncatechars:150 }}
+      </p>
+      <p class="location-game">Game: {{ location.game }}</p>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

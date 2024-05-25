@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ location.name }}</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    {% load static %}
+    <link href="{% static 'styles.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container wiki-content">
+      <h2>{{ location.name }}</h2>
+      <p>{{ location.description }}</p>
+      <p><strong>Author:</strong> {{ location.author }}</p>
+      <p><strong>Game:</strong> {{ location.game }}</p>
+      <a href="{% url 'locations_list' %}" class="btn btn-secondary mt-3"
+        >Back</a
+      >
+      {% if request.user == location.author %}
+      <a
+        href="{% url 'location_update' location.pk %}"
+        class="btn btn-warning mt-3"
+        >Edit</a
+      >
+      {% endif %} {% if request.user.is_staff %}
+      <form
+        method="post"
+        action="{% url 'location_delete' location.pk %}"
+        class="d-inline"
+      >
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger mt-3">Delete</button>
+      </form>
+      {% endif %}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block title %}Articles - Fallout Wiki{% endblock %}
+{% load static %} {% block extra_head %} <link rel="stylesheet" href="{% static
+"list_styles.css" %}"> {% endblock extra_head %} {% block content %}
+<div class="container article-list-container">
+  <h2>Articles</h2>
+  <div class="list-group">
+    {% for article in articles %}
+    <a
+      href="{% url 'article_detail' article.id %}"
+      class="list-group-item list-group-item-action"
+    >
+      <h4 class="article-title">{{ article.title }}</h4>
+      <p class="article-content">{{ article.content|truncatechars:150 }}</p>
+      <p class="article-game">Game: {{ article.game }}</p>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
